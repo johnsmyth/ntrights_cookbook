@@ -1,0 +1,7 @@
+name 'ntrights'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures ntrights'
+long_description 'Installs/Configures ntrights'
+version '0.1.0'
