@@ -1,9 +1,11 @@
 require 'spec_helper'
 
-describe 'ntrights::default' do
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
-  end
+describe command('c:\ntrights\showpriv.exe SeServiceLogonRight') do
+  its(:stdout) { should match(/testuser1/) }
+  its(:stdout) { should_not match(/testuser2/) }
+end
+
+describe command('c:\ntrights\showpriv.exe SeBackupPrivilege') do
+  its(:stdout) { should match(/testuser1/) }
+  its(:stdout) { should_not match(/testuser2/) }
 end
