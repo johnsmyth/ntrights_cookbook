@@ -29,12 +29,14 @@ def grant_rights
   cookbook_file ntrights_exe do
     source 'ntrights.exe'
     action :create
+    cookbook 'ntrights'
   end
 
   showpriv_exe = "#{new_resource.install_dir}\\showpriv.exe"
   cookbook_file showpriv_exe do
     source 'showpriv.exe'
     action :create
+    cookbook 'ntrights'
   end
 
   rights = []
@@ -62,12 +64,14 @@ def revoke_rights
   cookbook_file ntrights_exe do
     source 'ntrights.exe'
     action :create
+    cookbook 'ntrights'
   end
 
   showpriv_exe = "#{new_resource.install_dir}\\showpriv.exe"
   cookbook_file showpriv_exe do
     source 'showpriv.exe'
     action :create
+    cookbook 'ntrights'
   end
 
   rights = []
